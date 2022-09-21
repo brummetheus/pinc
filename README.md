@@ -90,7 +90,7 @@ In order for the container to access files on the host filesystem, a directory n
 ```
 params {
     outdir = "$projectDir/path/to/output_folder"
-    datadir = "$projectDir/path/to/sequencing_reads.gz"
+    data_dir = "$projectDir/path/to/sequencing_reads.gz"
     genome = "$projectDir/path/to/genome.fna"
     annot = "$projectDir/path/to/genome_annotation.gff"
     design = "$projectDir/path/to/design.tsv"
