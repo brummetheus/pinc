@@ -41,6 +41,7 @@ if (1 %in% g_counts$Freq) {
     x <- calcNormFactors(x)
 
     # read 2.10 in edgeR UserGuide
+    x <- estimateCommonDisp(x)
     x <- estimateTagwiseDisp(x)
 
     # do test for DEG
@@ -51,7 +52,7 @@ if (1 %in% g_counts$Freq) {
     et <- et[order(abs(et$PValue)),]
     filtered <- et[et$genes %in% hits$gene, ]
 
-    write.csv(all, file="allTags_sorted.csv", row.names=FALSE)
+    write.csv(et, file="allTags_sorted.csv", row.names=FALSE)
     write.csv(filtered, file="filteredTags_sorted.csv", row.names=FALSE)
 }
 
